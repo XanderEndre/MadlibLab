@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     /*
      * TODO LIST:
-     *  [] Create a UI that allows the user to enter each field required by your madlib
-     *  [] The UI should have buttons that the user cna click to signal they are entering balues.
-     *  [] Button should have a click handler:
-     *      [] Grabs the entered values
-     *      [] Converts them to appropriate value by casting or parsing
-     *      [] Use values with any String literals
-     *      [] Place the MadLib in Text Control visible to user
-     *  []  For added fun, and to be sure we're correctly parsing numeric inputs, double any number
+     *  [x] Create a UI that allows the user to enter each field required by your madlib
+     *  [x] The UI should have buttons that the user cna click to signal they are entering balues.
+     *  [x] Button should have a click handler:
+     *      [x] Grabs the entered values
+     *      [x] Converts them to appropriate value by casting or parsing
+     *      [x] Use values with any String literals
+     *      [x] Place the MadLib in Text Control visible to user
+     *  [x]  For added fun, and to be sure we're correctly parsing numeric inputs, double any number
      *        provided by the user before putting in the finished version of your mad lib output.
      *
      */
@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Grab Animal
         EditText etAnimal = (EditText) findViewById(R.id.etAnimal);
+        // Save the string
         String animal = etAnimal.getText().toString();
+        // Modify the visibility to be hidden
         etAnimal.setVisibility(View.GONE);
 
         // Grab Name
@@ -79,13 +81,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Grab Numbers
         EditText etNumber = (EditText) findViewById(R.id.etNumber);
+        // Parse the number as an Integer
         int number = Integer.parseInt(etNumber.getText().toString());
+        // Multiply it by two
+        number *= 2;
         etNumber.setVisibility(View.GONE);
 
         // Grab the button
         Button btn = (Button) findViewById(R.id.button);
+        // Hide the button
         btn.setVisibility(View.GONE);
 
+        // Build the paragraph
         String paragraph =
                 "Once there was a " + animal + " named " + name
                         + ". Their favorite thing to eat is " + food
@@ -95,11 +102,11 @@ public class MainActivity extends AppCompatActivity {
                         + ". Little did they know, their best friend, " + nameTwo
                         + " had taken " + number + " of " + name + "'s favorite " + food + ".";
 
+        // Grab the paragraph
         TextView finalParagraph = (TextView) findViewById(R.id.paragraph);
+        // Set the text
         finalParagraph.setText(paragraph);
+        // Change the visibility to visible
         finalParagraph.setVisibility(View.VISIBLE);
     }
-
-
-
 }
